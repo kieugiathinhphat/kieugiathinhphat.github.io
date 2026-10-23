@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 180" role="img" aria-labelledby="t d">
+<title id="t">Minh hoạ mã hoá RSA</title><desc id="d">Thông điệp được mã hóa thành bản mã bằng khóa công khai và giải mã trở lại bằng khóa bí mật.</desc>
+<rect width="680" height="180" rx="14" fill="#e9ece4"/>
+<g font-family="sans-serif" font-size="17" text-anchor="middle">
+  <rect x="25" y="48" width="160" height="84" rx="12" fill="#c5dbca"/><text x="105" y="84" fill="#284331" font-weight="600">Plaintext</text><text x="105" y="110" font-size="14" fill="#3b5847">m = 42</text>
+  <rect x="260" y="48" width="160" height="84" rx="12" fill="#d2dded"/><text x="340" y="84" fill="#30435b" font-weight="600">RSA</text><text x="340" y="110" font-size="14" fill="#4d607a">Encrypt</text>
+  <rect x="495" y="48" width="160" height="84" rx="12" fill="#e7d9bf"/><text x="575" y="84" fill="#5e4a2c" font-weight="600">Ciphertext</text><text x="575" y="110" font-size="14" fill="#735e3b">c = 2557</text>
+</g>
+<g fill="none" stroke="#68786d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M191 90h59l-9-8m9 8-9 8"/><path d="M426 90h59l-9-8m9 8-9 8"/>
+</g>
+</svg>

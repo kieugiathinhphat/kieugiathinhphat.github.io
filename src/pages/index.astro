@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const dateLabel = (date: Date) => new Intl.DateTimeFormat('vi-VN', {
+  day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Ho_Chi_Minh',
+}).format(date);
+---
+
+<BaseLayout title="Trang chủ">
+  <section class="intro" aria-labelledby="intro-title">
+    <!-- Thay public/avatar.svg bằng avatar thật của bạn sau. -->
+    <img class="avatar" src="/avatar.svg" alt="Avatar mẫu" width="86" height="86" />
+    <h1 id="intro-title">Xin chào, mình là username.</h1>
+    <p>
+      Một góc nhỏ trên Internet để mình chia sẻ những dự án cá nhân,
+      kiến thức lập trình và đôi điều thú vị trong quá trình học hỏi.
+    </p>
+    <div class="social-links">
+      <!-- Thay các liên kết mẫu bằng tài khoản thực của bạn. -->
+      <a href="https://github.com/kieugiathinhphat" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="mailto:hello@example.com">Email ↗</a>
+    </div>
+  </section>
+
+  <section class="recent" aria-labelledby="recent-title">
+    <h2 id="recent-title">Recent posts</h2>
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li class="post-item">
+          <h3><a href={`/posts/${post.id}/`}>{post.data.title}</a></h3>
+          <p class="post-meta">
+            <time datetime={post.data.pubDate.toISOString()}>{dateLabel(post.data.pubDate)}</time>
+            <span aria-hidden="true"> · </span>{post.data.type}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
