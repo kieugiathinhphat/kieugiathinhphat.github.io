@@ -9,9 +9,11 @@ interface Props {
 
 const {
   title,
-  description = 'Một góc nhỏ để chia sẻ project, code và những điều mình học được.',
+  description = 'Projects, code, and notes by kieugiathinhphat.',
 } = Astro.props;
 const path = Astro.url.pathname;
+const pageTitle = title === 'Trang chủ' ? 'kieugiathinhphat' : `${title} · kieugiathinhphat`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -20,7 +22,14 @@ const path = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <title>{title} · username</title>
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="kieugiathinhphat" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta name="twitter:card" content="summary" />
+    <title>{pageTitle}</title>
     <!-- Đặt theme trước khi trang hiển thị để tránh nháy nền sáng. -->
     <script is:inline>
       try {
