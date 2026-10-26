@@ -119,3 +119,23 @@ h2 { font-size: 21px; font-weight: 600; letter-spacing: -.035em; line-height: 1.
   .article-header { margin: 29px 0 35px; }
   .prose pre { padding: 15px; }
 }
+
+/* A quiet Spotify corner, consistent with the existing single-column blog. */
+.spotify-section { margin: 58px 0 90px; }
+.spotify-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.spotify-heading h2 { margin-bottom: 6px; }
+.spotify-period, .spotify-description { font-size: 12px; color: var(--muted); }
+.spotify-description { margin-bottom: 22px; }
+.spotify-list { list-style: none; margin: 0; padding: 0; }
+.spotify-list li + li { margin-top: 15px; }
+.spotify-track { display: flex; align-items: center; gap: 13px; min-width: 0; }
+.spotify-cover { width: 48px; height: 48px; object-fit: cover; border-radius: 5px; background: var(--avatar-bg); flex-shrink: 0; }
+.spotify-cover-fallback { display: grid; place-items: center; font-size: 21px; color: var(--muted); }
+.spotify-track-info { min-width: 0; flex: 1; display: flex; flex-direction: column; line-height: 1.55; }
+.spotify-track-name { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spotify-artist { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spotify-track-arrow { color: var(--muted); font-size: 17px; }
+.spotify-track:hover .spotify-track-name, .spotify-track:hover .spotify-track-arrow { color: var(--accent); }
+.spotify-attribution { border-top: 1px solid var(--border); margin-top: 20px; padding-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); }
+.spotify-attribution a { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); }
+.spotify-attribution a:hover { text-decoration: underline; }
