@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SpotifyOnRepeat from '../components/SpotifyOnRepeat.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
@@ -39,4 +40,6 @@ const dateLabel = (date: Date) => new Intl.DateTimeFormat('vi-VN', {
     </ul>
     </section>
   )}
+
+  <SpotifyOnRepeat />
 </BaseLayout>
