@@ -10,12 +10,7 @@ const updated = spotify.updatedAt
 ---
 
 {tracks.length > 0 && (
-  <section class="spotify-section" aria-labelledby="spotify-heading">
-    <div class="spotify-heading">
-      <h2 id="spotify-heading">On repeat</h2>
-      <span class="spotify-period">{spotify.period}</span>
-    </div>
-    <p class="spotify-description">A few songs I've been listening to lately.</p>
+  <section class="spotify-section" aria-label="Spotify top tracks">
     <ol class="spotify-list">
       {tracks.map((track) => (
         <li>
